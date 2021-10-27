@@ -28,16 +28,33 @@ class BirdCount
 
     public bool HasDayWithoutBirds()
     {
-        throw new NotImplementedException("Please implement the BirdCount.HasDayWithoutBirds() method");
+        foreach (int element in birdsPerDay)
+        {
+            if (element == 0) return true;
+        }
+
+        return false;
     }
 
     public int CountForFirstDays(int numberOfDays)
     {
-        throw new NotImplementedException("Please implement the BirdCount.CountForFirstDays() method");
+        int totalbirds=0;
+        for (int i=0; i < numberOfDays; i++)
+        {
+            totalbirds += birdsPerDay[i];
+        }
+
+        return totalbirds;
     }
 
     public int BusyDays()
     {
-        throw new NotImplementedException("Please implement the BirdCount.BusyDays() method");
+        int busydays = 0;
+        foreach (int element in birdsPerDay)
+        {
+            if (element >= 5) busydays += 1;
+        }
+
+        return busydays;
     }
 }
